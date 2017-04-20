@@ -16,7 +16,7 @@
     "url": "git+https://github.com/zoltan-nz/koa-ts-contacts-app.git"
   },
   "author": "Zoltan",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/zoltan-nz/koa-ts-contacts-app/issues"
   },
@@ -24,6 +24,7 @@
   "devDependencies": {
     "@types/koa": "^2.0.39",
     "@types/koa-bodyparser": "^3.0.23",
+    "@types/koa-hbs": "^1.0.1",
     "@types/koa-router": "^7.0.22",
     "@types/node": "^7.0.14",
     "nodemon": "^1.11.0",
@@ -35,6 +36,7 @@
   "dependencies": {
     "koa": "^2.2.0",
     "koa-bodyparser": "^4.2.0",
+    "koa-hbs": "^1.0.0-alpha.1",
     "koa-router": "^7.1.1"
   }
 }

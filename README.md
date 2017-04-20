@@ -181,7 +181,8 @@ $ npm i -D @types/koa @types/koa-bodyparser @types/koa-router
 ```typescript
 import * as Koa from 'koa';
 import * as Router from 'koa-router';
-import * as bodyParser from 'koa-bodyparser';
+
+import bodyParser = require('koa-bodyparser');
 
 const app    = new Koa();
 const router = new Router();
@@ -248,5 +249,100 @@ $ npm run watch:server
 
 Run them in separate terminals.
 
-### Move our app in `src` folder and add views
+Links:
+* [Koa.js](https://github.com/koajs/koa)
+* [koa-router](https://github.com/alexmingoia/koa-router)
 
+
+### Add handlebar templates
+
+```
+Our TODO list:
+* Install koa-hbs package
+* Create template folders and templates
+* Setup handlebar middleware
+* Render our template
+* Learning about Node.js debugging
+```
+
+Install `koa-hbs` packages for html rendering.
+
+```
+$ npm i -S koa-hbs@next
+$ npm i -D @types/koa-hbs
+```
+
+Create templates:
+```
+$ mkdir -p templates/layouts templates/pages
+$ touch templates/layouts/default.hbs
+$ touch templates/pages/home.hbs
+```
+
+`./templates/layouts/default.hbs`:
+
+```handlebars
+<html>
+<head>
+  <title>{{#if title}}{{title}}{{else}}Contacts App{{/if}}</title>
+</head>
+<body>
+{{{body}}}
+</body>
+</html>
+```
+
+`./templates/pages/home.hbs`:
+
+```handlebars
+<h1>{{title}}</h1>
+```
+
+Add template management to `server.ts`:
+
+```typescript
+import hbs = require('koa-hbs');
+```
+
+Setup a few constants:
+
+```typescript
+const TEMPLATES      = path.resolve(__dirname, 'templates');
+const LAYOUTS        = path.resolve(TEMPLATES, 'layouts');
+const DEFAULT_LAYOUT = 'default';
+```
+
+(Import `path`.)
+
+Add `hbs.middleware`:
+
+```typescript
+  .use(hbs.middleware({
+    defaultLayout: DEFAULT_LAYOUT,
+    layoutsPath:   LAYOUTS,
+    viewPath:      TEMPLATES,
+  }))
+```
+
+Update `router` to render our page:
+
+```typescript
+router.get('/', async ctx => {
+  // ctx.state = { title: 'title from state' };
+  await ctx.render('pages/home', { title: 'Home Page' });
+});
+```
+
+Please note, we use `async/await` syntax for managing Promise.
+
+A little about debugging:
+
+```
+$ nodemon --inspect ./server.js
+```
+
+Setup source map: uncomment `sourceMap` option in `tsconfig.json`. 
+
+Links:
+* [koa-hbs](https://github.com/koajs/koa-hbs/tree/1.0.0-alpha.1)
+* [handlebars](http://handlebarsjs.com/)
