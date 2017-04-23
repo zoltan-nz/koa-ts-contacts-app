@@ -6,8 +6,8 @@ import bodyParser = require('koa-bodyparser');
 import hbs = require('koa-hbs');
 
 const PORT           = process.env.PORT || 4000;
-const TEMPLATES      = path.resolve(__dirname, 'templates');
-const LAYOUTS        = path.resolve(TEMPLATES, 'layouts');
+const VIEWS_PATH     = path.resolve(__dirname, 'views');
+const LAYOUTS_PATH   = path.resolve(VIEWS_PATH, 'layouts');
 const DEFAULT_LAYOUT = 'default';
 
 const app    = new Koa();
@@ -22,8 +22,8 @@ app
   .use(bodyParser())
   .use(hbs.middleware({
     defaultLayout: DEFAULT_LAYOUT,
-    layoutsPath:   LAYOUTS,
-    viewPath:      TEMPLATES,
+    layoutsPath:   LAYOUTS_PATH,
+    viewPath:      VIEWS_PATH,
   }))
   .use(router.routes())
   .listen(PORT);
