@@ -23,7 +23,7 @@ app
   .use(hbs.middleware({
     defaultLayout: DEFAULT_LAYOUT,
     layoutsPath:   LAYOUTS_PATH,
-    viewPath:      VIEWS_PATH,
+    viewPath:      VIEWS_PATH
   }))
   .use(router.routes())
   .listen(PORT);

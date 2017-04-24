@@ -4,12 +4,12 @@
   "description": "Building a simple contact management application using Node.js, TypeScript, Koa.js, Handlebars and Webpack.",
   "main": "server.js",
   "scripts": {
-    "clean": "rimraf *.js",
+    "clean": "gulp clean",
     "lint": "tslint --project ./tsconfig.json --type-check --fix",
     "build": "tsc",
     "watch:build": "npm run clean; npm run build -- --watch",
-    "watch:server": "nodemon --watch server.js",
-    "start": "npm run build && node server.js"
+    "watch:server": "nodemon --watch ./dist/server.js",
+    "start": "npm run build && node ./dist/server.js"
   },
   "repository": {
     "type": "git",
@@ -22,11 +22,15 @@
   },
   "homepage": "https://github.com/zoltan-nz/koa-ts-contacts-app#readme",
   "devDependencies": {
+    "@types/del": "^2.2.32",
+    "@types/gulp": "^4.0.3",
     "@types/koa": "^2.0.39",
     "@types/koa-bodyparser": "^3.0.23",
     "@types/koa-hbs": "^1.0.1",
     "@types/koa-router": "^7.0.22",
     "@types/node": "^7.0.22",
+    "del": "^2.2.2",
+    "gulp": "github:gulpjs/gulp#4.0",
     "nodemon": "^1.11.0",
     "rimraf": "^2.6.1",
     "ts-node": "^3.0.4",

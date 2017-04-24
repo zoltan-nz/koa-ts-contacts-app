@@ -4,7 +4,9 @@
   "jsRules": { },
   "rules": {
     "quotemark": [ true, "single", "avoid-escape" ],
-    "arrow-parens": [ true, "ban-single-arg-parens" ]
+    "arrow-parens": [ true, "ban-single-arg-parens" ],
+    "object-literal-sort-keys": false,
+    "trailing-comma": false
   },
   "rulesDirectory": [ ]
 }
