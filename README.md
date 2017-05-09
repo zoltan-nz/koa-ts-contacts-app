@@ -409,8 +409,6 @@ If we would try `npm start` now, our server would fail, because we haven't moved
 
 TODO:
 * [ ] Add gulp
-* [ ] Add sass
-* [ ] Add bootstrap
 
 #### Add gulp
 
@@ -484,23 +482,43 @@ const views = () => {
 export { clean, views };
 ```
 
-#### Manage sass
+#### Add TypeScript task and tslint task to gulpfile.ts
 
-'/styles' for our sass source 
+```
+$ npm i -D gulp-typescript @types/gulp-typescript
+$ npm i -D gulp-tslint @types/gulp-tslint
+$ npm i -D gulp-sourcemaps @types/gulp-sourcemaps
+```
 
-`/styles/app.scss` will be our main entry style file
+```
+import del = require('del');
+import * as gulp from 'gulp';
+import tsc = require('gulp-typescript');
+import sourcemaps = require('gulp-sourcemaps');
 
-Strategy:
-1. Editing styles in `app.scss`
-2. Sass compiler compile and copy to `/dist/styles`
+const DIST_FOLDER = './dist';
 
-#### Add bootstrap
+const paths = {
+  views: {
+    src:  './src/views/**/*',
+    dest: `${DIST_FOLDER}/views`
+  }
+};
 
-https://v4-alpha.getbootstrap.com/
+const clean = () => del([DIST_FOLDER]);
 
+const views = () =>
+  gulp.src(paths.views.src)
+    .pipe(gulp.dest(paths.views.dest));
 
+const tsProject = tsc.createProject('./tsconfig.json');
+const ts        = () =>
+  tsProject.src()
+    .pipe(sourcemaps.init())
+    .pipe(tsProject())
+    .js
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(DIST_FOLDER));
 
-Links:
-
-* https://github.com/Microsoft/dts-gen
-* https://github.com/Microsoft/TypeScript-Node-Starter
+export { clean, views, ts };
+```
