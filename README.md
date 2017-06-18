@@ -259,7 +259,7 @@ Links:
 ```
 Our TODO list:
 * Install koa-hbs package
-* Create template folders and templates
+* Create views folder and add templates
 * Setup handlebar middleware
 * Render our template
 * Learning about Node.js debugging
@@ -274,12 +274,12 @@ $ npm i -D @types/koa-hbs
 
 Create templates:
 ```
-$ mkdir -p templates/layouts templates/pages
-$ touch templates/layouts/default.hbs
-$ touch templates/pages/home.hbs
+$ mkdir -p views/layouts views/pages
+$ touch views/layouts/default.hbs
+$ touch views/pages/home.hbs
 ```
 
-`./templates/layouts/default.hbs`:
+`./views/layouts/default.hbs`:
 
 ```handlebars
 <html>
@@ -292,7 +292,7 @@ $ touch templates/pages/home.hbs
 </html>
 ```
 
-`./templates/pages/home.hbs`:
+`./views/pages/home.hbs`:
 
 ```handlebars
 <h1>{{title}}</h1>
@@ -307,8 +307,8 @@ import hbs = require('koa-hbs');
 Setup a few constants:
 
 ```typescript
-const TEMPLATES      = path.resolve(__dirname, 'templates');
-const LAYOUTS        = path.resolve(TEMPLATES, 'layouts');
+const VIEWS      = path.resolve(__dirname, 'views');
+const LAYOUTS        = path.resolve(VIEWS, 'layouts');
 const DEFAULT_LAYOUT = 'default';
 ```
 
@@ -320,7 +320,7 @@ Add `hbs.middleware`:
   .use(hbs.middleware({
     defaultLayout: DEFAULT_LAYOUT,
     layoutsPath:   LAYOUTS,
-    viewPath:      TEMPLATES,
+    viewPath:      VIEWS,
   }))
 ```
 
@@ -346,3 +346,24 @@ Setup source map: uncomment `sourceMap` option in `tsconfig.json`.
 Links:
 * [koa-hbs](https://github.com/koajs/koa-hbs/tree/1.0.0-alpha.1)
 * [handlebars](http://handlebarsjs.com/)
+
+### Setup assets management - add gulp, sass, bootstrap 
+
+TODO
+* [ ] Add gulp
+* [ ] Add sass
+* [ ] Add bootstrap
+
+Directory structure:
+
+`/dist` for our built packages 
+'/styles' for our sass source 
+
+`/styles/app.scss` will be our main entry style file
+
+Strategy:
+1. Editing styles in app.scss
+2. Sass compiler compile and copy in /dist/styles
+
+
+
