@@ -1,6 +1,6 @@
 # koa-ts-contacts-app
 
-Building a simple contact management application using Node.js, TypeScript, Koa.js, Handlebars and Webpack.
+Building a simple contact management application using Node.js, TypeScript, Koa.js, Handlebars.
 
 ## Implementation log
 

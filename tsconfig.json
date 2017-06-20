@@ -1,16 +1,9 @@
 {
   "compilerOptions": {
     /* Basic Options */
-<<<<<<< HEAD
     "target": "ES2016",                       /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */
     "module": "commonjs",                     /* Specify module code generation: 'commonjs', 'amd', 'system', 'umd' or 'es2015'. */
     "lib": [ "ES2016" ],                      /* Specify library files to be included in the compilation:  */
-=======
-    "target": "ES2015",                          /* Specify ECMAScript target version: 'ES3' (default), 'ES5',
-    'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */
-    "module": "commonjs",                     /* Specify module code generation: 'commonjs', 'amd', 'system', 'umd' or 'es2015'. */
-    "lib": ["ES2015"],                             /* Specify library files to be included in the compilation:  */
->>>>>>> Add gulp tasks
     // "allowJs": true,                       /* Allow javascript files to be compiled. */
     // "checkJs": true,                       /* Report errors in .js files. */
     // "jsx": "preserve",                     /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
@@ -58,16 +51,9 @@
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
   },
   "include": [
-<<<<<<< HEAD
-    "./src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-=======
     "src/**/*"
   ],
   "exclude": [
->>>>>>> Add gulp tasks
     "test/**/*"
   ]
 }

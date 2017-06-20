@@ -22,37 +22,17 @@
   },
   "homepage": "https://github.com/zoltan-nz/koa-ts-contacts-app#readme",
   "devDependencies": {
-<<<<<<< HEAD
-=======
     "@types/del": "^2.2.32",
-    "@types/gulp": "^4.0.3",
-    "@types/gulp-sourcemaps": "0.0.30",
-    "@types/gulp-tslint": "^3.6.31",
-    "@types/gulp-typescript": "^2.13.0",
->>>>>>> Add gulp tasks
     "@types/koa": "^2.0.39",
     "@types/koa-bodyparser": "^3.0.23",
     "@types/koa-hbs": "^1.0.3",
     "@types/koa-router": "^7.0.22",
-<<<<<<< HEAD
     "@types/node": "^8.0.13",
     "nodemon": "^1.11.0",
     "rimraf": "^2.6.1",
     "ts-node": "^3.2.0",
     "tslint": "^5.5.0",
     "typescript": "^2.4.1"
-=======
-    "@types/node": "^7.0.22",
-    "del": "^2.2.2",
-    "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-sourcemaps": "^2.6.0",
-    "gulp-tslint": "^8.1.0",
-    "gulp-typescript": "^3.1.7",
-    "nodemon": "^1.11.0",
-    "ts-node": "^3.0.4",
-    "tslint": "^5.3.2",
-    "typescript": "^2.3.3"
->>>>>>> Add gulp tasks
   },
   "dependencies": {
     "koa": "^2.3.0",
