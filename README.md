@@ -407,12 +407,15 @@ If we would try `npm start` now, our server would fail, because we haven't moved
 
 ### Setup assets management - add gulp, copy views, manage sass, and install bootstrap
 
+Deprecated: too complicated! Preferred: simple npm scripts ;)
+
 TODO:
 * [ ] Add gulp
 
 #### Add gulp
 
 ~~Let's use `Gulp 4`: https://github.com/gulpjs/gulp/tree/4.0~~ (Not ready yet.)
+
 
 ```
 $ npm i -g gulp-cli
