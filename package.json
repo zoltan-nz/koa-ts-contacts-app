@@ -1,15 +1,18 @@
 {
   "name": "koa-ts-contacts-app",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Building a simple contact management application API using Node.js, TypeScript, Koa.js",
   "main": "server.js",
   "scripts": {
-    "clean": "",
-    "lint": "tslint --project ./tsconfig.json --type-check --fix",
-    "build": "",
-    "watch:build": "",
-    "watch:server": "nodemon ./dist/server.js --watch",
-    "start": "npm run build && node ./dist/server.js"
+    "clean": "del ./dist",
+    "lint": "tslint --project ./tsconfig.json --fix",
+    "build": "tsc",
+    "test": "",
+    "watch:build": "npm run build -- --watch",
+    "watch:lint": "",
+    "watch:test": "",
+    "watch:run": "nodemon ./dist/server.js --watch",
+    "start": "npm run clean && npm run lint && npm run build && node ./dist/server.js"
   },
   "repository": {
     "type": "git",
@@ -36,7 +39,6 @@
   "dependencies": {
     "koa": "^2.2.0",
     "koa-bodyparser": "^4.2.0",
-    "koa-hbs": "^1.0.0",
     "koa-router": "^7.2.0"
   }
 }

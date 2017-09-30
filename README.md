@@ -92,3 +92,4 @@ User
 *Authentication*
 
 Following Passport.js patterns: http://www.passportjs.org/docs/authenticate/
+
