@@ -27,18 +27,20 @@
   },
   "homepage": "https://github.com/zoltan-nz/koa-ts-contacts-app#readme",
   "devDependencies": {
-    "@types/del": "^3.0.0",
+    "@types/jest": "^21.1.8",
     "@types/koa": "^2.0.41",
     "@types/koa-bodyparser": "^3.0.26",
     "@types/koa-router": "^7.0.26",
     "@types/node": "^8.0.53",
+    "chokidar": "^1.7.0",
+    "concurrently": "^3.5.1",
     "del": "^3.0.0",
+    "jest": "^21.2.1",
     "nodemon": "^1.12.1",
+    "ts-jest": "^21.2.4",
     "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
-    "typescript": "^2.6.2",
-    "concurrently": "^3.5.1",
-    "chokidar": "^1.7.0"
+    "typescript": "^2.6.2"
   },
   "dependencies": {
     "koa": "^2.4.1",
