@@ -10,7 +10,9 @@
     "object-literal-sort-keys": false,
     "trailing-comma": false,
     "no-unused-expression": false,
-    "variable-name": false
+    "variable-name": false,
+    "no-implicit-dependencies": false,
+    "no-namespace": false
   },
   "rulesDirectory": [ ]
 }

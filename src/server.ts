@@ -1,23 +1,17 @@
 import * as Koa from 'koa';
-import * as Router from 'koa-router';
-import * as path from 'path';
+import * as net from 'net';
 
-import bodyParser = require('koa-bodyparser');
+const DEFAULT_PORT = process.env.PORT || 4000;
 
-const PORT           = process.env.PORT || 4000;
+export default class Server {
 
-const app    = new Koa();
-const router = new Router();
+  constructor(public app: Koa) {
+  }
 
-router.get('/', async ctx => {
-  ctx.body = { title: 'title from state'};
-  return ctx;
-  // await ctx.render('pages/home', { title: 'Home Page' });
-});
+  public start(port?: number): net.Server {
+    const finalPort = port || DEFAULT_PORT;
 
-app
-  .use(bodyParser())
-  .use(router.routes())
-  .listen(PORT);
-
-process.stdout.write(`Contacts App listening on port ${PORT}`);
+    process.stdout.write(`Contacts App listening on port ${finalPort}`);
+    return this.app.listen(finalPort);
+  }
+}
