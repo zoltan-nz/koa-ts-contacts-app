@@ -93,3 +93,8 @@ User
 
 Following Passport.js patterns: http://www.passportjs.org/docs/authenticate/
 
+## Changelog
+
+* Create `/api/categories` route
+  * Add test
+  * Add implementation
