@@ -4,19 +4,18 @@ import * as Router from 'koa-router';
 
 export const DEFAULT_LIVE_MESSAGE = "It's up";
 
+export interface IApp {
+  router: Router;
+}
+
 export default class App {
 
   public app: Application;
   public router: Router;
 
-  constructor() {
+  constructor(options: IApp) {
     this.app    = new Application();
-    this.router = new Router();
-
-    this.router.get('/', async ctx => {
-      ctx.body = DEFAULT_LIVE_MESSAGE;
-      return ctx;
-    });
+    this.router = options.router;
 
     this.app
       .use(bodyParser())

@@ -1,5 +1,6 @@
 import App from './app';
 import Server from './server';
 
-const app = new App().getInstance();
+const app = new App();
+
 new Server(app).start();

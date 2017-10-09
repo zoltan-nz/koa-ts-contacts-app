@@ -98,3 +98,8 @@ Following Passport.js patterns: http://www.passportjs.org/docs/authenticate/
 * Create `/api/categories` route
   * Add test
   * Add implementation
+
+## Other Notes
+
+* Investigating RESTyped: https://github.com/rawrmaan/restyped
+* [Article](https://blog.falcross.com/introducing-restyped-end-to-end-typing-for-rest-apis-with-typescript/)
