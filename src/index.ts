@@ -3,4 +3,4 @@ import Server from './server';
 
 const app = new App();
 
-new Server(app).start();
+new Server(app.getInstance()).start();
